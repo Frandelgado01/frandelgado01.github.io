@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Javier Delgado Rodríguez - Portfolio</title>
+    <title>Francisco Javier Delgado - Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Fuentes: Inter para texto general, Fira Code para detalles técnicos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Preloader de estilo Terminal -->
+    <div id="preloader">
+        <div class="terminal-loader">
+            <span class="cmd">root@frandelgado:~#</span> <span class="typer">inicializando_portfolio.sh<span class="cursor">_</span></span>
+        </div>
+    </div>
+
     <nav id="navbar">
         <div class="nav-content">
-            <div class="logo">Francisco J.</div>
+            <div class="logo">&lt;Francisco /&gt;</div>
             <ul class="nav-links">
                 <li><a href="#hero-header" class="active">Inicio</a></li>
                 <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#habilidades">Stack</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -24,134 +32,225 @@
 
     <header id="hero-header">
         <div class="hero-bg-glow"></div>
-        <div class="presentacion-content">
+        <div class="grid-overlay"></div>
+        <div class="presentacion-content reveal">
             <div class="presentacion-avatar">
-                <img src="imagenporfolio.jpg" alt="Foto de Francisco Javier Delgado" />
-                <div class="status-badge"><span class="status-dot"></span> Disponible</div>
+                <img src="imagenporfolio.jpg" alt="Francisco Javier Delgado" onerror="this.src='https://via.placeholder.com/170/1a1a2e/00f0ff?text=FJD'" />
+                <div class="status-badge"><span class="status-dot"></span> Open to work</div>
             </div>
             <div class="hero-text-container">
-                <h3 class="presentacion-saludo">Hola, mi nombre es</h3>
+                <h3 class="presentacion-saludo">Hola, mundo. Soy</h3>
                 <h1 class="presentacion-titulo"><span class="nombre-animado">Francisco Javier Delgado</span></h1>
-                <h2 class="presentacion-subtitulo">Ingeniero Informático <span class="emoji-tech">💻</span></h2>
+                <h2 class="presentacion-subtitulo">Ingeniero de Software</h2>
                 <p class="presentacion-descripcion">
-                    Transformo ideas en código limpio y escalable. Apasionado por el 
-                    <span class="text-highlight">Desarrollo de Software</span> y la innovación tecnológica.
+                    Transformo problemas complejos en código limpio, seguro y escalable. 
+                    Especializado en <span class="text-highlight">Desarrollo Backend</span>, 
+                    <span class="text-highlight">Inteligencia Artificial</span> y <span class="text-highlight">Ciberseguridad</span>.
                 </p>
                 <div class="hero-actions">
-                    <a href="#experiencia" class="btn-primary">Ver Experiencia</a>
-                    <a href="#contacto" class="btn-outline">Contactar</a>
+                    <a href="#proyectos" class="btn-primary">Ver Código</a>
+                    <a href="assets/CV-Francisco-Javier-Delgado.pdf" target="_blank" class="btn-outline" download>Descargar CV</a>
                 </div>
             </div>
         </div>
         <a href="#experiencia" class="scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
             <div class="mouse"><div class="wheel"></div></div>
-            <div class="arrow-scroll"></div>
         </a>
     </header>
 
     <main>
         <section class="slide" id="experiencia">
-            <h2>Experiencia y Formación</h2>
+            <h2 class="section-title reveal">Experiencia & Formación</h2>
             <div class="timeline-container">
                 <div class="timeline-line"></div>
-                <div class="timeline-item">
-                    <div class="timeline-marker edu"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <span class="timeline-date">2017 - 2020</span>
-                            <span class="timeline-badge edu-badge">Bachillerato</span>
-                        </div>
-                        <h3 class="timeline-title">Científico Tecnológico</h3>
-                        <h4 class="timeline-org">IES Bernardo de Balbuena</h4>
-                        <p class="timeline-desc">Base sólida en matemáticas, física y fundamentos tecnológicos.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
+                
+                <div class="timeline-item reveal">
                     <div class="timeline-marker work"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <span class="timeline-date">Jul - Sep (2022/23)</span>
-                            <span class="timeline-badge">Exp. Laboral</span>
+                            <span class="timeline-date">Mar 2026 - Jun 2026</span>
+                            <span class="timeline-badge">Prácticas</span>
                         </div>
-                        <h3 class="timeline-title">Recepcionista</h3>
-                        <h4 class="timeline-org">Residencia Ntra. Sra. de Peñarroya</h4>
-                        <p class="timeline-desc">Atención al cliente y gestión administrativa en entorno de alta demanda.</p>
+                        <h3 class="timeline-title">Ingeniero de Software (Prácticas)</h3>
+                        <h4 class="timeline-org">NTT DATA ESPAÑA</h4>
+                        <p class="timeline-desc">Gestión de indisponibilidades en centrales para un importante cliente del sector energético. Mantenimiento y desarrollo exhaustivo utilizando tecnologías corporativas.</p>
+                        <div class="tech-tags mt-10">
+                            <span>PL/SQL</span><span>Struts 1</span><span>Soporte</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+
+                <div class="timeline-item reveal">
                     <div class="timeline-marker edu"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <span class="timeline-date">Actualidad</span>
-                            <span class="timeline-badge edu-badge">Grado Universitario</span>
+                            <span class="timeline-date">2022 - Jun 2026</span>
+                            <span class="timeline-badge edu-badge">Grado</span>
                         </div>
                         <h3 class="timeline-title">Ingeniería Informática</h3>
                         <h4 class="timeline-org">Escuela Superior de Informática (UCLM)</h4>
-                        <p class="timeline-desc">Especialización en Desarrollo de Software, Java, Python y Arquitectura.</p>
+                        <p class="timeline-desc">Especialización intensiva en Desarrollo de Software, integración de Inteligencia Artificial, Ciberseguridad y Arquitectura de computadores.</p>
+                        <div class="tech-tags mt-10">
+                            <span>Java 11</span><span>Python</span><span>C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker default"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Veranos 2023 - 2024</span>
+                            <span class="timeline-badge default-badge">Otros</span>
+                        </div>
+                        <h3 class="timeline-title">Atención al Cliente y Gestión</h3>
+                        <h4 class="timeline-org">Residencia Ntra. Sra. de Peñarroya</h4>
+                        <p class="timeline-desc">Atención directa, resolución de peticiones diarias y organización administrativa en un entorno dinámico.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="slide" id="habilidades">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-masonry-block">
-                <div class="skill-card"><img class="skill-logo" src="logos/java.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Java</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/python.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Python</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/linux.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Linux</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/git.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Git & GitHub</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/mongo.png" onerror="this.style.display='none'"><div class="skill-head"><strong>MongoDB</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/mysql.png" onerror="this.style.display='none'"><div class="skill-head"><strong>MySQL</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/oracle.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Oracle SQL</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/vscode.png" onerror="this.style.display='none'"><div class="skill-head"><strong>VS Code</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/visualstudio.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Visual Studio</strong></div></div>
-                <div class="skill-card"><img class="skill-logo" src="logos/eclipse.png" onerror="this.style.display='none'"><div class="skill-head"><strong>Eclipse IDE</strong></div></div>
-                <div class="skill-card highlight-card"><span style="font-size:1.8rem;">🇬🇧</span><div class="skill-head"><strong>Inglés B1</strong></div></div>
-                <div class="skill-card highlight-card"><span style="font-size:1.8rem;">🚗</span><div class="skill-head"><strong>Coche Propio</strong></div></div>
+            <h2 class="section-title reveal">Stack Tecnológico</h2>
+            <div class="skills-wrapper reveal">
+                
+                <div class="skill-category">
+                    <h3 class="category-title">01. Core & Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><span>☕</span> Java (11)</div>
+                        <div class="skill-item"><span>🐍</span> Python</div>
+                        <div class="skill-item"><span>⚙️</span> C</div>
+                        <div class="skill-item"><span>🗄️</span> PL/SQL</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">02. Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><span>⚛️</span> React</div>
+                        <div class="skill-item"><span>🅰️</span> Angular</div>
+                        <div class="skill-item"><span>🟨</span> JavaScript</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">03. Datos & Sistemas</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><span>🍃</span> MongoDB</div>
+                        <div class="skill-item"><span>🐬</span> MySQL</div>
+                        <div class="skill-item"><span>🐧</span> Kali Linux</div>
+                        <div class="skill-item"><span>🛡️</span> Metasploit</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">04. Herramientas & Extras</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><span>🐙</span> Git / GitHub</div>
+                        <div class="skill-item"><span>💻</span> VS Code / Eclipse</div>
+                        <div class="skill-item highlight-skill"><span>🇬🇧</span> Inglés B1+</div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section class="slide" id="proyectos">
-            <h2>Proyectos Destacados</h2>
+            <h2 class="section-title reveal">Proyectos Destacados</h2>
             <div class="proyectos-grid"> 
-                <div class="proyecto">
-                    <h3>Gramola</h3>
-                    <p>Reproductor de musica para bares integrando API de Spotify.</p>
-                    <a href="" target="_blank">En proceso &rarr;</a>
+                
+                <div class="proyecto reveal">
+                    <div class="proyecto-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="#proyectos" title="En desarrollo">🔗</a>
+                        </div>
+                    </div>
+                    <h3>Asistente IA Vitivinícola</h3>
+                    <p class="proyecto-desc">Diseño de un observatorio inteligente basado en IA para la gestión eficiente de normativas y datos de sostenibilidad agrícola. (Trabajo Fin de Grado).</p>
+                    <div class="tech-tags">
+                        <span>IA</span><span>Python</span><span>Data Processing</span>
+                    </div>
                 </div>
-                <div class="proyecto">
+
+                <div class="proyecto reveal">
+                    <div class="proyecto-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="#proyectos" title="Investigación">🔗</a>
+                        </div>
+                    </div>
+                    <h3>Pentesting & Contenedores</h3>
+                    <p class="proyecto-desc">Análisis de vulnerabilidades, pruebas orientadas a contenedores (CVE-2024-21626) y TCP hijacking en entornos controlados.</p>
+                    <div class="tech-tags">
+                        <span>Kali Linux</span><span>Metasploit</span><span>Docker</span>
+                    </div>
+                </div>
+
+                <div class="proyecto reveal">
+                    <div class="proyecto-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="https://github.com/SI2024-ESI/rushhour-Frandelgado01" target="_blank" title="Ver GitHub">💻</a>
+                        </div>
+                    </div>
+                    <h3>Rush Hour (IA Solver)</h3>
+                    <p class="proyecto-desc">Desarrollo del clásico rompecabezas de bloques deslizantes e implementación de algoritmos de búsqueda heurística para resolución automática.</p>
+                    <div class="tech-tags">
+                        <span>IA Heurística</span><span>Algoritmos</span>
+                    </div>
+                </div>
+
+                <div class="proyecto reveal">
+                    <div class="proyecto-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="#proyectos" title="En proceso">🔗</a>
+                        </div>
+                    </div>
+                    <h3>Gramola (API Spotify)</h3>
+                    <p class="proyecto-desc">Reproductor de música para entornos locales integrando el backend con la API oficial de Spotify aplicando metodologías ágiles.</p>
+                    <div class="tech-tags">
+                        <span>API REST</span><span>Frontend</span><span>Backend</span>
+                    </div>
+                </div>
+
+                <div class="proyecto reveal">
+                    <div class="proyecto-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="https://github.com/Frandelgado01/sokoban-local/tree/main" target="_blank" title="Ver GitHub">💻</a>
+                        </div>
+                    </div>
                     <h3>Sokoban Local</h3>
-                    <p>Clásico puzzle Sokoban. Versión local y editable.</p>
-                    <a href="https://github.com/Frandelgado01/sokoban-local/tree/main" target="_blank">Ver repositorio &rarr;</a>
+                    <p class="proyecto-desc">Desarrollo integral del clásico puzzle Sokoban, implementando una versión jugable en local con capacidad de edición de niveles.</p>
+                    <div class="tech-tags">
+                        <span>Lógica</span><span>Game Dev</span>
+                    </div>
                 </div>
-                <div class="proyecto">
-                    <h3>ISO2 - BC04</h3>
-                    <p>Trabajo colaborativo de Ingeniería del Software II.</p>
-                    <a href="https://github.com/DavidAragonRodriguez/2024-ISO2-BC04" target="_blank">Ver repositorio &rarr;</a>
-                </div>
-                <div class="proyecto">
-                    <h3>InfoDeporte</h3>
-                    <p>Plataforma de gestión de información deportiva.</p>
-                    <a href="https://github.com/AlbertoCordoba/isi-INFODEPORTE" target="_blank">Ver repositorio &rarr;</a>
-                </div>
+
             </div>
         </section>
 
         <section class="slide" id="contacto">
-            <h2>Contacto</h2>
-            <div class="contact-wrap">
+            <h2 class="section-title reveal">Contacto</h2>
+            <div class="contact-wrap reveal">
                 <div class="contact-card">
-                    <p>¿Tienes una propuesta o quieres colaborar? ¡Hablemos!</p>
+                    <h3 class="contact-cta">¿Iniciamos un proceso?</h3>
+                    <p>Actualmente abierto a nuevas oportunidades laborales y retos tecnológicos. Mi bandeja de entrada siempre está disponible.</p>
                     <ul class="contact-list">
-                        <li><a class="contact-link" href="mailto:frandelgador1@gmail.com"><span class="contact-icon">📧</span> Email</a></li>
-                        <li><a id="btnShowPhone" class="contact-link" href="#" data-phone="+34 695 039 421"><span class="contact-icon">📱</span> Ver número</a></li>
-                        <li><a class="contact-link" href="https://www.linkedin.com/in/francisco-javier-delgado-rodriguez-642768365/" target="_blank"><span class="contact-icon">💼</span> LinkedIn</a></li>
-                        <li><a class="contact-link" href="https://github.com/Frandelgado01" target="_blank"><span class="contact-icon">🐱</span> GitHub</a></li>
-                        <li><a class="contact-link" href="assets/CV-Francisco-Javier-Delgado.pdf" target="_blank" download><span class="contact-icon">📄</span> Descargar CV</a></li>
+                        <li><a class="contact-link" href="mailto:frandelgadorl@gmail.com"><span class="contact-icon">📧</span> frandelgadorl@gmail.com</a></li>
+                        <li><a id="btnShowPhone" class="contact-link" href="#" data-phone="+34 695 039 421"><span class="contact-icon">📱</span> Mostrar Teléfono</a></li>
+                        <li><a class="contact-link" href="https://www.linkedin.com/in/francisco-javier-delgado-rodriguez-642768365/" target="_blank"><span class="contact-icon">💼</span> LinkedIn Profile</a></li>
+                        <li><a class="contact-link" href="https://github.com/Frandelgado01" target="_blank"><span class="contact-icon">🐱</span> GitHub Profile</a></li>
                     </ul>
                 </div>
             </div>
-            <footer><p>&copy; 2025 Francisco Javier Delgado Rodríguez</p></footer>
+            <footer>
+                <p>Diseñado y desarrollado por <strong>Francisco Javier Delgado</strong> &copy; 2026</p>
+            </footer>
         </section>
     </main>
 

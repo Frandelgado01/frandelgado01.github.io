@@ -1,21 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 1. MENÚ DE NAVEGACIÓN ACTIVO (SCROLL SPY)
+    // 1. PRELOADER LOGIC
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.classList.add('hide-preloader');
+    }, 1200); // Desaparece tras 1.2 segundos
+
+    // 2. SCROLL REVEAL ANIMATIONS
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = {
+        threshold: 0.1, // El elemento aparece cuando un 10% es visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Solo anima una vez
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+        revealOnScroll.observe(el);
+    });
+
+    // 3. MENÚ DE NAVEGACIÓN ACTIVO (SCROLL SPY)
     const sections = document.querySelectorAll('section, header#hero-header');
     const navLinks = document.querySelectorAll('.nav-links a');
 
     const observerOptions = {
         root: null,
-        // Detecta cuando la sección está en la mitad de la pantalla
         rootMargin: '-40% 0px -40% 0px', 
         threshold: 0
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const spyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                // Actualizar clases del menú
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${id}`) {
@@ -26,26 +52,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    sections.forEach(section => observer.observe(section));
+    sections.forEach(section => spyObserver.observe(section));
 
-    // 2. BOTÓN "VER NÚMERO"
+    // 4. BOTÓN "MOSTRAR TELÉFONO"
     const btnPhone = document.getElementById('btnShowPhone');
     if (btnPhone) {
         btnPhone.addEventListener('click', (e) => {
             e.preventDefault();
             const phone = btnPhone.dataset.phone;
             if (phone) {
-                btnPhone.innerHTML = `<span style="font-weight:bold; color:#fff; margin-right:8px;">${phone}</span> 📞`;
+                btnPhone.innerHTML = `<span class="contact-icon">📱</span> ${phone}`;
                 btnPhone.style.pointerEvents = 'none'; // Evitar doble clic
-                btnPhone.style.borderColor = '#00ff88';
-                btnPhone.style.background = 'rgba(0, 255, 136, 0.15)';
+                btnPhone.style.borderColor = 'var(--primary-cyan)';
+                btnPhone.style.color = 'var(--primary-cyan)';
             }
         });
     }
 
-    // 3. EFECTO TILT 3D (Solo Desktop)
+    // 5. EFECTO TILT 3D (Solo Desktop) Mantenido y suavizado
     if (window.matchMedia("(min-width: 769px)").matches) {
-        const cards = document.querySelectorAll('.proyecto, .skill-card, .contact-card, .timeline-content');
+        const cards = document.querySelectorAll('.proyecto, .skill-category');
         
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
@@ -55,10 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cx = rect.width / 2;
                 const cy = rect.height / 2;
                 
-                const dx = (x - cx) / 25;
-                const dy = (y - cy) / 25;
+                // Reducido el efecto para hacerlo más sutil y premium
+                const dx = (x - cx) / 40;
+                const dy = (y - cy) / 40;
 
-                card.style.transform = `perspective(1000px) rotateX(${-dy}deg) rotateY(${dx}deg) scale(1.01)`;
+                card.style.transform = `perspective(1000px) rotateX(${-dy}deg) rotateY(${dx}deg) scale(1.02)`;
             });
 
             card.addEventListener('mouseleave', () => {
